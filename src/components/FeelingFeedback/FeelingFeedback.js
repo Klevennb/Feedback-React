@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class FeelingFeedback extends Component {
     constructor(props) {
@@ -18,8 +19,18 @@ class FeelingFeedback extends Component {
         if (this.state.feeling === '') {
             return <button disabled>Next</button>
         } else {
-            return <button>Next</button>
+            return <button onClick={this.nextPage}>Next</button>
         }
+    }
+    //sends to next page
+    nextPage = () => {
+        const action = {
+            type: 'SET_FEELING',
+            payload: this.state.feeling
+        }
+        this.props.dispatch(action);
+        this.props.history.push('/understanding-feedback');
+
     }
     render() {
         
@@ -46,4 +57,4 @@ class FeelingFeedback extends Component {
     }
 }
 
-export default FeelingFeedback;
+export default connect()(FeelingFeedback);
