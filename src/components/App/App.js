@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 import { HashRouter as Router, Route, } from 'react-router-dom';
+import UnderstandingFeedback from '../UnderStandingFeedback/UnderstandingFeedback';
+import CommentsFeedback from '../CommentsFeedback/CommentsFeedback';
+import SupportFeedback from '../SupportFeedback/SupportFeedback';
+import FeelingFeedback from '../FeelingFeedback/FeelingFeedback';
 
 class App extends Component {
   render() {
@@ -14,9 +18,10 @@ class App extends Component {
         <Router>
           <div>
             <Route exact path="/" component={FeelingFeedback} />
-            <Route exact path="/customer-info" component={CustomerInfo} />
-            <Route exact path="/check-out" component={CheckOut} />
-            <Route exact path="/admin" component={Admin} />
+            <Route exact path="/understanding-feedback" component={UnderstandingFeedback} />
+            <Route exact path="/comments-feedback" component={CommentsFeedback} />
+            <Route exact path="/support-feedback" component={SupportFeedback} />
+
           </div>
         </Router>
         <br/>
