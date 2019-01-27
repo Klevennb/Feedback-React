@@ -6,6 +6,7 @@ import UnderstandingFeedback from '../UnderStandingFeedback/UnderstandingFeedbac
 import CommentsFeedback from '../CommentsFeedback/CommentsFeedback';
 import SupportFeedback from '../SupportFeedback/SupportFeedback';
 import FeelingFeedback from '../FeelingFeedback/FeelingFeedback';
+import ReviewFeedback from '../ReviewFeedback/ReviewFeedback';
 
 class App extends Component {
   render() {
@@ -21,10 +22,12 @@ class App extends Component {
             <Route exact path="/understanding-feedback" component={UnderstandingFeedback} />
             <Route exact path="/comments-feedback" component={CommentsFeedback} />
             <Route exact path="/support-feedback" component={SupportFeedback} />
+            <Route exact path="/review-feedback" component={ReviewFeedback} />
 
           </div>
         </Router>
         <br/>
+        {/* <ReviewFeedback /> */}
       </div>
     );
   }

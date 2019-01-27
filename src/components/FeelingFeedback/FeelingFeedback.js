@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import ReviewFeedback from '../ReviewFeedback/ReviewFeedback';
 
 class FeelingFeedback extends Component {
     constructor(props) {
@@ -52,6 +53,7 @@ class FeelingFeedback extends Component {
                     </select>
                 </div>
                 <div>{this.buttonRender()}</div>
+                <ReviewFeedback />
             </div>
         );
     }

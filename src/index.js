@@ -9,8 +9,13 @@ import logger from 'redux-logger';
 
 const feedbackScores = (state = [], action) => {
     if (action.type === 'SET_FEELING') {
-        return action.payload;
+        state = []
+        return [...state, action.payload];
     }else if (action.type === 'SET_UNDERSTANDING'){
+        return [...state, action.payload]
+    }else if (action.type === 'SET_SUPPORT'){
+        return [...state, action.payload]
+    }else if (action.type === 'SET_COMMENTS'){
         return [...state, action.payload]
     }
     return state;
