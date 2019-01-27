@@ -9,7 +9,7 @@ class CommentsFeedback extends Component {
             comments: ''
         };
     }
-    //if a number is selected, the state will be changed
+
     handleChange = (event) => {
         this.setState({ comments: event.target.value });  
     }

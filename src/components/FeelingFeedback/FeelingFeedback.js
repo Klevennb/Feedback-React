@@ -29,7 +29,7 @@ class FeelingFeedback extends Component {
             type: 'SET_FEELING',
             payload: this.state.feeling
         }
-        this.props.dispatch(action);
+        this.props.dispatch(action);  //sends to reducer
         this.props.history.push('/understanding-feedback');
 
     }
