@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 
 class FeedbackSuccessful extends Component {
 
@@ -11,6 +11,11 @@ class FeedbackSuccessful extends Component {
  
     //sends to next page
     nextPage = () => {
+        const action = {
+            type: 'CLEAR_REDUCER',
+            payload: null
+        }
+        this.props.dispatch(action)
         this.props.history.push('/');
 
     }
@@ -25,4 +30,4 @@ class FeedbackSuccessful extends Component {
     }
 }
 
-export default(FeedbackSuccessful);
+export default connect ()(FeedbackSuccessful);

@@ -10,8 +10,6 @@ router.post('/', (req, res) => {
    .then((result) => {
         res.sendStatus(201);
     }).catch((error) => {
-        console.log('Error POST /order', error);
-        console.log('Error POST /api/order', error);
         res.sendStatus(500);
     });
 });

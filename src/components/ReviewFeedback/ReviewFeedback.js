@@ -39,6 +39,15 @@ class ReviewFeedback extends Component {
        
         this.props.history.push('/feedback-successful');
     }
+    //will clear reducer and start over
+    startOver = () => {
+        const action = {
+            type: 'CLEAR_REDUCER',
+            payload: null
+        }
+        this.props.dispatch(action)
+        this.props.history.push('/');
+    }
     
     render() {
 
@@ -55,6 +64,7 @@ class ReviewFeedback extends Component {
                         <h4>Comments: {this.state.comments}</h4>
                         
                         {this.renderButton()}
+                        <Button variant="contained"color="secondary" size='small' onClick = {this.startOver} >Start Over</Button>
                         
                        
                     </CardContent>
