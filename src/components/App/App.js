@@ -7,6 +7,7 @@ import CommentsFeedback from '../CommentsFeedback/CommentsFeedback';
 import SupportFeedback from '../SupportFeedback/SupportFeedback';
 import FeelingFeedback from '../FeelingFeedback/FeelingFeedback';
 import ReviewFeedback from '../ReviewFeedback/ReviewFeedback';
+import FeedbackSuccessful from '../FeedbackSucessful/FeedbackSucessful'
 
 class App extends Component {
   render() {
@@ -23,6 +24,7 @@ class App extends Component {
             <Route exact path="/comments-feedback" component={CommentsFeedback} />
             <Route exact path="/support-feedback" component={SupportFeedback} />
             <Route exact path="/review-feedback" component={ReviewFeedback} />
+            <Route exact path="/feedback-successful" component={FeedbackSuccessful} />
 
           </div>
         </Router>

@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardHeader from '@material-ui/core/CardHeader';
+import Button from '@material-ui/core/Button';
 
 class ReviewFeedback extends Component {
     constructor(props) {
@@ -17,13 +18,13 @@ class ReviewFeedback extends Component {
 
     renderButton = () => {
         if(this.props.reduxStore.feedbackScores.length < 4){
-            return <button disabled>Submit</button>
+            return <Button variant="outlined" size="small" disabled>Incomplete</Button>
         } else {
-            return <button onClick={this.nextPage}>Submit</button>
+            return <Button variant="outlined" color="primary" onClick={this.nextPage}>Submit</Button>
         }
     }
     nextPage = () => {
-        console.log('ji');
+        this.props.history.push('/feedback-successful')
         
     }
     
@@ -40,7 +41,10 @@ class ReviewFeedback extends Component {
                         <h4>Understanding: {this.state.understanding}</h4>
                         <h4>Support: {this.state.support}</h4>
                         <h4>Comments: {this.state.comments}</h4>
+                        
                         {this.renderButton()}
+                        
+                       
                     </CardContent>
                    
                 </Card>
