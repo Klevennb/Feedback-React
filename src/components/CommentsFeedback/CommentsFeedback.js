@@ -22,13 +22,19 @@ class CommentsFeedback extends Component {
             return <button onClick={this.nextPage}>Next</button>
         }
     }
-    //sends to next page
+    //sends to next page, but alerts you if you went out of order
     nextPage = () => {
         const action = {
             type: 'SET_COMMENTS',
             payload: this.state.comments
         }
         this.props.dispatch(action);
+        const counter = this.props.reduxStore.feedbackScores.length;
+        console.log(counter);
+        
+        if(counter !== 3){
+            alert("It looks like you strayed from the happy path. Please Start over.");
+        }
         this.props.history.push('/review-feedback');
 
     }
@@ -48,4 +54,8 @@ class CommentsFeedback extends Component {
     }
 }
 
-export default connect()(CommentsFeedback);
+const mapReduxStoreToProps = (reduxStore) => ({
+    reduxStore: reduxStore
+})
+
+export default connect(mapReduxStoreToProps)(CommentsFeedback);

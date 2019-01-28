@@ -12,6 +12,7 @@ const feedbackScores = (state = [], action) => {
         state = [];
         return [...state, action.payload];
     }else if (action.type === 'SET_UNDERSTANDING'){
+        console.log(state.length);
         return [...state, action.payload];
     }else if (action.type === 'SET_SUPPORT'){
         return [...state, action.payload];
