@@ -4,6 +4,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardHeader from '@material-ui/core/CardHeader';
 import Button from '@material-ui/core/Button';
+import axios from 'axios';
 
 class ReviewFeedback extends Component {
     constructor(props) {
@@ -24,8 +25,19 @@ class ReviewFeedback extends Component {
         }
     }
     nextPage = () => {
-        this.props.history.push('/feedback-successful')
-        
+       console.log(this.state);
+       const info = this.state;
+        axios({
+            method: 'POST',
+            url: '/database',
+            data: info
+        }).then((response) => {
+            console.log(response);
+        }).catch((error) => {
+            alert('Error in POST: ', error)
+        });
+       
+        this.props.history.push('/feedback-successful');
     }
     
     render() {
